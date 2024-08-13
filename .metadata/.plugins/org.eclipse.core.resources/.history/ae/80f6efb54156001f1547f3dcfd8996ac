@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-heading {
+    margin: 0;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #ddd;
+}
+</style>
+  <nav class="navbar">
+        <div class="container">
+            <h1 class="navbar-heading">CustomerService</h1>
+            <ul class="navbar-menu">
+                <li><a href="#addOrder">Add New Order</a></li>
+                <li><a href="#deleteOrder">Delete Order</a></li>
+                <li><a href="#updateOrder">Update Order</a></li>
+                <li><a href="#getOrder">Get Order</a></li>
+            </ul>
+        </div>
+    </nav>
+<c:choose>
+<c:when test="${action == 'all'}">
+<h1>Employee Lists</h1>
+<table>
+<tr>
+<th>Name</th>
+<th>Id</th>
+<th>Salary</th>
+</tr>
+<c:forEach var="list" items="${lists}">
+<tr>
+<td>${list.cId}</td>
+<td>${list.cEmail}</td>
+<td>${list.cName}</td>
+</tr>
+
+</c:forEach>
+</table>
+</c:when>
+<c:otherwise>
+<h1>Name: ${list.cName}</h1>
+<h1>Id: ${list.cEmail}</h1>
+<h1>Age: ${list.cId}</h1>
+</c:otherwise>
+</c:choose>
+
+</body>
+</html>

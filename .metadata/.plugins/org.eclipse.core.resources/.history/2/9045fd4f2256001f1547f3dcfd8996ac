@@ -1,0 +1,33 @@
+package com.graymatter.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.graymatter.model.Customer;
+import com.graymatter.model.Orders;
+
+public class OrdersDao {
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate=jdbcTemplate;
+	}
+	
+	//CRUD operations
+	
+	//Get all Orders
+		public List<Orders> getAllOrders() {
+		String query="select * from orders";
+		List<Orders> orderList= jdbcTemplate.query(query, new OrdersRowMapper());
+		return orderList;
+		}
+	//get Order by id
+		public Orders getOrderById(int oId){
+			String query="select * from orders where order_id="+oId;
+			List<Orders> oList= jdbcTemplate.query(query, new OrdersRowMapper());
+			return  oList.get(0);
+		}	
+}

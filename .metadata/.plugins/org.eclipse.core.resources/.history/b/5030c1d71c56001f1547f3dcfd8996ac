@@ -1,0 +1,17 @@
+package com.graymatter.dao;
+
+public class CustomerDao {
+
+	//crud operations
+	
+	//Get all customers
+	//select * from customer
+	
+	//insert/add customer
+	//insert into customer values(2,'naman','namanbhat@gmail.com');
+	
+	//delete customer
+	
+	
+	
+}

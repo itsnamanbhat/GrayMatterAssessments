@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+					<tr>
+						<th >OrderId</th>
+						<th >Order Date</th>
+						<th>Total Amount</th>
+						<th >Customer Id</th>
+					</tr>
+					<tr>
+						<td>${order.orderId}</td>
+						<td>${order.orderDate}</td>
+						<td>${order.totalAmount}</td>
+						<td>${order.customerId}</td>
+					</tr>
+
+</table>
+</body>
+</html>
