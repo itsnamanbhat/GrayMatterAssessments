@@ -9,6 +9,8 @@ import com.graymatter.dto.CandidateDto;
 import com.graymatter.exceptions.ResourceNotFoundException;
 import com.graymatter.services.CandidateService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +34,7 @@ public class CandidateController {
 		return service.getAllCandidates();
 	}
 	@PostMapping("/candidate")
-	public CandidateDto addCandidate(@RequestBody CandidateDto c) {
+	public CandidateDto addCandidate(  @RequestBody CandidateDto c)  {
 		return service.addCandidate(c);
 	}
 	

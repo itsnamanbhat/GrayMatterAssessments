@@ -11,4 +11,5 @@ public interface ApplicationServiceInterface {
 	public ApplicationDto getApplicationById(int id) throws ResourceNotFoundException;
 	public ApplicationDto updateApplication(ApplicationDto a);
 	public void deleteApplication(int id);
+	
 }

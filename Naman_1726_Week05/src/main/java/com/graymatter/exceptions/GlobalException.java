@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -16,6 +17,12 @@ public class GlobalException {
 	
 	@ExceptionHandler(NoSuchElementException.class)
 	public ResponseEntity<String> handleNoSuchElementException(NoSuchElementException rnfe){
-		return new ResponseEntity<>("No id present",HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>("No such Element present",HttpStatus.NOT_FOUND);
 	}
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<String> validationFailed(MethodArgumentNotValidException rnfe){
+		return new ResponseEntity<>("validation Failed",HttpStatus.NOT_FOUND);
+	}
+	
+	
 }

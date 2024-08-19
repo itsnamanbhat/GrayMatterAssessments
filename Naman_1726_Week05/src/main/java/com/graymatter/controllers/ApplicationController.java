@@ -39,6 +39,11 @@ public class ApplicationController {
 	{
 		return service.getApplicationById(id);
 	}
+	@GetMapping("/application/job/{id}")
+	public List<ApplicationDto> getApplicationByJob(@PathVariable("id") int id) throws ResourceNotFoundException
+	{
+		return service.getApplicationByJob(id);
+	}
 	
 	@DeleteMapping("/application/{id}")
 	public void delteApplication(@PathVariable("id") int id) throws ResourceNotFoundException

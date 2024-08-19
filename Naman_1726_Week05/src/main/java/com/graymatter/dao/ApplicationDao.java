@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.graymatter.dto.ApplicationDto;
 import com.graymatter.entities.Application;
 import com.graymatter.exceptions.ResourceNotFoundException;
 import com.graymatter.repositories.ApplicationRepository;
@@ -34,5 +35,10 @@ public class ApplicationDao {
 	}
 	public void deleteApplication(int id) {
 		 repo.deleteById(id);
+	}
+
+	public List<Application> getApplicationByJob(int id) {
+		// TODO Auto-generated method stub
+		return repo.findBySpecificJob(id);
 	}
 }

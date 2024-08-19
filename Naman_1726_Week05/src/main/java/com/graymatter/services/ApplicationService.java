@@ -49,4 +49,11 @@ public class ApplicationService implements ApplicationServiceInterface {
 		dao.deleteApplication(id);
 		
 	}
+
+	public List<ApplicationDto> getApplicationByJob(int id) {
+		// TODO Auto-generated method stub
+		List<Application> iList=dao.getApplicationByJob(id);
+		return iList.stream().map((item)->mapper.mapToApplicationDto(item)).collect(Collectors.toList());
+	}
+
 }
