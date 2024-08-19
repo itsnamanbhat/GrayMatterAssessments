@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 	String ADMIN_EMAIL="adminMy@gmail.com";
 	String ADMIN_PASSWORD="admin@123";
-	@PostMapping("/admin/login")
+	@PostMapping("/admin/login/{email}/{password}")
     public String adminLogin(@PathVariable String email, @PathVariable String password) {
         if (ADMIN_EMAIL.equals(email) && ADMIN_PASSWORD.equals(password)) {
             return "Admin login successful";

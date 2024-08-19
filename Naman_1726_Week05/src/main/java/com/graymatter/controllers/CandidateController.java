@@ -50,7 +50,7 @@ public class CandidateController {
 	public CandidateDto updateCandidate(@RequestBody CandidateDto c) {
 		return service.updateCandidate(c);
 	}
-	 @PostMapping("/candidate/login")
+	 @PostMapping("/candidate/login/{email}/{password}")
 	    public String candidateLogin(@PathVariable String email, @PathVariable String password) throws ResourceNotFoundException {
 		 if (service.isSignedIn(email, password)) {
 	            return "Login successful";

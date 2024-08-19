@@ -12,7 +12,7 @@ import com.graymatter.entities.Candidate;
 
 public interface CandidateRepository extends JpaRepository<Candidate, Integer> {
 
-@Query(value= "SELECT * FROM candidate c WHERE c.cEmail LIKE ?1 AND c.cPwd LIKE ?2", nativeQuery=true)
+@Query(value= "SELECT * FROM candidate c WHERE c.c_email = ?1 AND c.c_pwd = ?2", nativeQuery=true)
 public Candidate findCandidateByEmail(String email,String pwd)	;
 
 }

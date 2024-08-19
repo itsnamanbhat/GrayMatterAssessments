@@ -27,7 +27,7 @@ private Date appDate;
 
 
 @ManyToOne
-@JoinColumn(name = "candidateId")
+@JoinColumn(name = "cId")
 private Candidate candidate;
 
 @ManyToOne
